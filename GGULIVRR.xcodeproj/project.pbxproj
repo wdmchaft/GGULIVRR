@@ -1,0 +1,500 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		918E62F414C8795E00C76E94 /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 918E62F314C8795E00C76E94 /* libzbar.a */; };
+		918E631114C87A0900C76E94 /* zbar-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 918E630D14C87A0900C76E94 /* zbar-back.png */; };
+		918E631214C87A0900C76E94 /* zbar-help.html in Resources */ = {isa = PBXBuildFile; fileRef = 918E630E14C87A0900C76E94 /* zbar-help.html */; };
+		918E631314C87A0900C76E94 /* zbar-helpicons.png in Resources */ = {isa = PBXBuildFile; fileRef = 918E630F14C87A0900C76E94 /* zbar-helpicons.png */; };
+		918E631414C87A0900C76E94 /* zbar-samples.png in Resources */ = {isa = PBXBuildFile; fileRef = 918E631014C87A0900C76E94 /* zbar-samples.png */; };
+		918E631614C87C6500C76E94 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 918E631514C87C6500C76E94 /* AVFoundation.framework */; };
+		918E631814C87C6B00C76E94 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 918E631714C87C6B00C76E94 /* CoreMedia.framework */; };
+		918E631A14C87C7800C76E94 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 918E631914C87C7800C76E94 /* CoreVideo.framework */; };
+		918E631C14C87C7E00C76E94 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 918E631B14C87C7E00C76E94 /* QuartzCore.framework */; };
+		918E631E14C87C8F00C76E94 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 918E631D14C87C8F00C76E94 /* libiconv.dylib */; };
+		918E632014C87F2500C76E94 /* Ipad_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 918E631F14C87F2500C76E94 /* Ipad_Icon.png */; };
+		91A684BD14B0C01100368A32 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A684BC14B0C01100368A32 /* UIKit.framework */; };
+		91A684BF14B0C01100368A32 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A684BE14B0C01100368A32 /* Foundation.framework */; };
+		91A684C114B0C01100368A32 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A684C014B0C01100368A32 /* CoreGraphics.framework */; };
+		91A684C714B0C01100368A32 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 91A684C514B0C01100368A32 /* InfoPlist.strings */; };
+		91A684C914B0C01100368A32 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A684C814B0C01100368A32 /* main.m */; };
+		91A684CD14B0C01100368A32 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A684CC14B0C01100368A32 /* AppDelegate.m */; };
+		91A684D014B0C01100368A32 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A684CF14B0C01100368A32 /* ViewController.m */; };
+		91A684D314B0C01100368A32 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91A684D114B0C01100368A32 /* ViewController_iPhone.xib */; };
+		91A684D614B0C01100368A32 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91A684D414B0C01100368A32 /* ViewController_iPad.xib */; };
+		91A684DD14B0C02C00368A32 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A684DC14B0C02C00368A32 /* Security.framework */; };
+		91A684DF14B0C04600368A32 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A684DE14B0C04600368A32 /* libz.dylib */; };
+		91A684E114B0C05F00368A32 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A684E014B0C05F00368A32 /* libstdc++.dylib */; };
+		91A684E414B0C09300368A32 /* Couchbase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A684E214B0C09300368A32 /* Couchbase.framework */; };
+		91A684E514B0C09300368A32 /* CouchCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A684E314B0C09300368A32 /* CouchCocoa.framework */; };
+		91A6854614B49FF200368A32 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A6854514B49FF200368A32 /* LoginViewController.m */; };
+		91A6855114B7081800368A32 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91A6855014B7081800368A32 /* LoginViewController.xib */; };
+		91D7B8B014F6988E00DA8EA6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91D7B8AF14F6988E00DA8EA6 /* CoreLocation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		918E62F314C8795E00C76E94 /* libzbar.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libzbar.a; sourceTree = "<group>"; };
+		918E62F814C879B600C76E94 /* Decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Decoder.h; sourceTree = "<group>"; };
+		918E62F914C879B600C76E94 /* Exception.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exception.h; sourceTree = "<group>"; };
+		918E62FA14C879B600C76E94 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
+		918E62FB14C879B600C76E94 /* ImageScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageScanner.h; sourceTree = "<group>"; };
+		918E62FC14C879B600C76E94 /* Processor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Processor.h; sourceTree = "<group>"; };
+		918E62FD14C879B600C76E94 /* Scanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scanner.h; sourceTree = "<group>"; };
+		918E62FE14C879B600C76E94 /* Symbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Symbol.h; sourceTree = "<group>"; };
+		918E62FF14C879B600C76E94 /* Video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Video.h; sourceTree = "<group>"; };
+		918E630014C879B600C76E94 /* Window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Window.h; sourceTree = "<group>"; };
+		918E630114C879C100C76E94 /* zbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zbar.h; sourceTree = "<group>"; };
+		918E630214C879C200C76E94 /* ZBarCaptureReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarCaptureReader.h; sourceTree = "<group>"; };
+		918E630314C879C200C76E94 /* ZBarHelpController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarHelpController.h; sourceTree = "<group>"; };
+		918E630414C879C200C76E94 /* ZBarImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarImage.h; sourceTree = "<group>"; };
+		918E630514C879C200C76E94 /* ZBarImageScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarImageScanner.h; sourceTree = "<group>"; };
+		918E630614C879C200C76E94 /* ZBarReaderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarReaderController.h; sourceTree = "<group>"; };
+		918E630714C879C200C76E94 /* ZBarReaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarReaderView.h; sourceTree = "<group>"; };
+		918E630814C879C200C76E94 /* ZBarReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarReaderViewController.h; sourceTree = "<group>"; };
+		918E630914C879C200C76E94 /* ZBarSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarSDK.h; sourceTree = "<group>"; };
+		918E630A14C879C200C76E94 /* ZBarSymbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarSymbol.h; sourceTree = "<group>"; };
+		918E630D14C87A0900C76E94 /* zbar-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zbar-back.png"; sourceTree = "<group>"; };
+		918E630E14C87A0900C76E94 /* zbar-help.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "zbar-help.html"; sourceTree = "<group>"; };
+		918E630F14C87A0900C76E94 /* zbar-helpicons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zbar-helpicons.png"; sourceTree = "<group>"; };
+		918E631014C87A0900C76E94 /* zbar-samples.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zbar-samples.png"; sourceTree = "<group>"; };
+		918E631514C87C6500C76E94 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		918E631714C87C6B00C76E94 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		918E631914C87C7800C76E94 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		918E631B14C87C7E00C76E94 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		918E631D14C87C8F00C76E94 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		918E631F14C87F2500C76E94 /* Ipad_Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Ipad_Icon.png; path = ../Ipad_Icon.png; sourceTree = "<group>"; };
+		91A684B814B0C01100368A32 /* Ggulivrr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ggulivrr.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		91A684BC14B0C01100368A32 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		91A684BE14B0C01100368A32 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		91A684C014B0C01100368A32 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		91A684C414B0C01100368A32 /* GGULIVRR-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GGULIVRR-Info.plist"; sourceTree = "<group>"; };
+		91A684C614B0C01100368A32 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		91A684C814B0C01100368A32 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		91A684CA14B0C01100368A32 /* GGULIVRR-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GGULIVRR-Prefix.pch"; sourceTree = "<group>"; };
+		91A684CB14B0C01100368A32 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		91A684CC14B0C01100368A32 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		91A684CE14B0C01100368A32 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		91A684CF14B0C01100368A32 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		91A684D214B0C01100368A32 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
+		91A684D514B0C01100368A32 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		91A684DC14B0C02C00368A32 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		91A684DE14B0C04600368A32 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		91A684E014B0C05F00368A32 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		91A684E214B0C09300368A32 /* Couchbase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Couchbase.framework; sourceTree = "<group>"; };
+		91A684E314B0C09300368A32 /* CouchCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CouchCocoa.framework; sourceTree = "<group>"; };
+		91A6854414B49FF100368A32 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		91A6854514B49FF200368A32 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		91A6855014B7081800368A32 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		91D7B8AF14F6988E00DA8EA6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		91A684B514B0C01100368A32 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91D7B8B014F6988E00DA8EA6 /* CoreLocation.framework in Frameworks */,
+				918E631E14C87C8F00C76E94 /* libiconv.dylib in Frameworks */,
+				918E631C14C87C7E00C76E94 /* QuartzCore.framework in Frameworks */,
+				918E631A14C87C7800C76E94 /* CoreVideo.framework in Frameworks */,
+				918E631814C87C6B00C76E94 /* CoreMedia.framework in Frameworks */,
+				918E631614C87C6500C76E94 /* AVFoundation.framework in Frameworks */,
+				91A684E114B0C05F00368A32 /* libstdc++.dylib in Frameworks */,
+				91A684DF14B0C04600368A32 /* libz.dylib in Frameworks */,
+				91A684DD14B0C02C00368A32 /* Security.framework in Frameworks */,
+				91A684BD14B0C01100368A32 /* UIKit.framework in Frameworks */,
+				91A684BF14B0C01100368A32 /* Foundation.framework in Frameworks */,
+				91A684C114B0C01100368A32 /* CoreGraphics.framework in Frameworks */,
+				91A684E414B0C09300368A32 /* Couchbase.framework in Frameworks */,
+				91A684E514B0C09300368A32 /* CouchCocoa.framework in Frameworks */,
+				918E62F414C8795E00C76E94 /* libzbar.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		918E62F114C8794B00C76E94 /* ZBar */ = {
+			isa = PBXGroup;
+			children = (
+				918E62F514C8797100C76E94 /* Headers */,
+				918E62F314C8795E00C76E94 /* libzbar.a */,
+			);
+			name = ZBar;
+			sourceTree = "<group>";
+		};
+		918E62F514C8797100C76E94 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				918E630C14C879FE00C76E94 /* Resources */,
+				918E62F614C8799400C76E94 /* ZBarSDK */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+		918E62F614C8799400C76E94 /* ZBarSDK */ = {
+			isa = PBXGroup;
+			children = (
+				918E630114C879C100C76E94 /* zbar.h */,
+				918E630214C879C200C76E94 /* ZBarCaptureReader.h */,
+				918E630314C879C200C76E94 /* ZBarHelpController.h */,
+				918E630414C879C200C76E94 /* ZBarImage.h */,
+				918E630514C879C200C76E94 /* ZBarImageScanner.h */,
+				918E630614C879C200C76E94 /* ZBarReaderController.h */,
+				918E630714C879C200C76E94 /* ZBarReaderView.h */,
+				918E630814C879C200C76E94 /* ZBarReaderViewController.h */,
+				918E630914C879C200C76E94 /* ZBarSDK.h */,
+				918E630A14C879C200C76E94 /* ZBarSymbol.h */,
+				918E62F714C879A300C76E94 /* zbar */,
+			);
+			name = ZBarSDK;
+			sourceTree = "<group>";
+		};
+		918E62F714C879A300C76E94 /* zbar */ = {
+			isa = PBXGroup;
+			children = (
+				918E62F814C879B600C76E94 /* Decoder.h */,
+				918E62F914C879B600C76E94 /* Exception.h */,
+				918E62FA14C879B600C76E94 /* Image.h */,
+				918E62FB14C879B600C76E94 /* ImageScanner.h */,
+				918E62FC14C879B600C76E94 /* Processor.h */,
+				918E62FD14C879B600C76E94 /* Scanner.h */,
+				918E62FE14C879B600C76E94 /* Symbol.h */,
+				918E62FF14C879B600C76E94 /* Video.h */,
+				918E630014C879B600C76E94 /* Window.h */,
+			);
+			name = zbar;
+			sourceTree = "<group>";
+		};
+		918E630C14C879FE00C76E94 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				918E630D14C87A0900C76E94 /* zbar-back.png */,
+				918E630E14C87A0900C76E94 /* zbar-help.html */,
+				918E630F14C87A0900C76E94 /* zbar-helpicons.png */,
+				918E631014C87A0900C76E94 /* zbar-samples.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		91A684AD14B0C01000368A32 = {
+			isa = PBXGroup;
+			children = (
+				91A684C214B0C01100368A32 /* GGULIVRR */,
+				91A684BB14B0C01100368A32 /* Frameworks */,
+				91A684B914B0C01100368A32 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		91A684B914B0C01100368A32 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				91A684B814B0C01100368A32 /* Ggulivrr.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		91A684BB14B0C01100368A32 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				91A684E014B0C05F00368A32 /* libstdc++.dylib */,
+				91A684DE14B0C04600368A32 /* libz.dylib */,
+				918E631D14C87C8F00C76E94 /* libiconv.dylib */,
+				918E631714C87C6B00C76E94 /* CoreMedia.framework */,
+				91A684C014B0C01100368A32 /* CoreGraphics.framework */,
+				91D7B8AF14F6988E00DA8EA6 /* CoreLocation.framework */,
+				918E631914C87C7800C76E94 /* CoreVideo.framework */,
+				918E631B14C87C7E00C76E94 /* QuartzCore.framework */,
+				918E631514C87C6500C76E94 /* AVFoundation.framework */,
+				91A684E214B0C09300368A32 /* Couchbase.framework */,
+				91A684E314B0C09300368A32 /* CouchCocoa.framework */,
+				91A684DC14B0C02C00368A32 /* Security.framework */,
+				91A684BC14B0C01100368A32 /* UIKit.framework */,
+				91A684BE14B0C01100368A32 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		91A684C214B0C01100368A32 /* GGULIVRR */ = {
+			isa = PBXGroup;
+			children = (
+				918E62F114C8794B00C76E94 /* ZBar */,
+				91A6854814B49FF600368A32 /* Core */,
+				91A684F914B4523700368A32 /* NIB */,
+				91A684C314B0C01100368A32 /* Supporting Files */,
+			);
+			name = GGULIVRR;
+			path = CouchDBTest;
+			sourceTree = "<group>";
+		};
+		91A684C314B0C01100368A32 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				918E631F14C87F2500C76E94 /* Ipad_Icon.png */,
+				91A684C414B0C01100368A32 /* GGULIVRR-Info.plist */,
+				91A684C514B0C01100368A32 /* InfoPlist.strings */,
+				91A684C814B0C01100368A32 /* main.m */,
+				91A684CA14B0C01100368A32 /* GGULIVRR-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		91A684F914B4523700368A32 /* NIB */ = {
+			isa = PBXGroup;
+			children = (
+				91A684D114B0C01100368A32 /* ViewController_iPhone.xib */,
+				91A684D414B0C01100368A32 /* ViewController_iPad.xib */,
+				91A6855014B7081800368A32 /* LoginViewController.xib */,
+			);
+			name = NIB;
+			sourceTree = "<group>";
+		};
+		91A6854814B49FF600368A32 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				91A684CB14B0C01100368A32 /* AppDelegate.h */,
+				91A684CC14B0C01100368A32 /* AppDelegate.m */,
+				91A684CE14B0C01100368A32 /* ViewController.h */,
+				91A684CF14B0C01100368A32 /* ViewController.m */,
+				91A6854414B49FF100368A32 /* LoginViewController.h */,
+				91A6854514B49FF200368A32 /* LoginViewController.m */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		91A684B714B0C01100368A32 /* Ggulivrr */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 91A684D914B0C01100368A32 /* Build configuration list for PBXNativeTarget "Ggulivrr" */;
+			buildPhases = (
+				91A684B414B0C01100368A32 /* Sources */,
+				91A684B514B0C01100368A32 /* Frameworks */,
+				91A684B614B0C01100368A32 /* Resources */,
+				91A684EA14B0C28400368A32 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Ggulivrr;
+			productName = CouchDBTest;
+			productReference = 91A684B814B0C01100368A32 /* Ggulivrr.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		91A684AF14B0C01000368A32 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 91A684B214B0C01000368A32 /* Build configuration list for PBXProject "GGULIVRR" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 91A684AD14B0C01000368A32;
+			productRefGroup = 91A684B914B0C01100368A32 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				91A684B714B0C01100368A32 /* Ggulivrr */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		91A684B614B0C01100368A32 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91A684C714B0C01100368A32 /* InfoPlist.strings in Resources */,
+				91A684D314B0C01100368A32 /* ViewController_iPhone.xib in Resources */,
+				91A684D614B0C01100368A32 /* ViewController_iPad.xib in Resources */,
+				91A6855114B7081800368A32 /* LoginViewController.xib in Resources */,
+				918E631114C87A0900C76E94 /* zbar-back.png in Resources */,
+				918E631214C87A0900C76E94 /* zbar-help.html in Resources */,
+				918E631314C87A0900C76E94 /* zbar-helpicons.png in Resources */,
+				918E631414C87A0900C76E94 /* zbar-samples.png in Resources */,
+				918E632014C87F2500C76E94 /* Ipad_Icon.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		91A684EA14B0C28400368A32 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "rsync -a \"${SRCROOT}/Couchbase.framework/CouchbaseResources\" \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		91A684B414B0C01100368A32 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91A684C914B0C01100368A32 /* main.m in Sources */,
+				91A684CD14B0C01100368A32 /* AppDelegate.m in Sources */,
+				91A684D014B0C01100368A32 /* ViewController.m in Sources */,
+				91A6854614B49FF200368A32 /* LoginViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		91A684C514B0C01100368A32 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				91A684C614B0C01100368A32 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		91A684D114B0C01100368A32 /* ViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				91A684D214B0C01100368A32 /* en */,
+			);
+			name = ViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		91A684D414B0C01100368A32 /* ViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				91A684D514B0C01100368A32 /* en */,
+			);
+			name = ViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		91A684D714B0C01100368A32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		91A684D814B0C01100368A32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		91A684DA14B0C01100368A32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CouchDBTest/GGULIVRR-Prefix.pch";
+				INFOPLIST_FILE = "CouchDBTest/GGULIVRR-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/CouchDBTest\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		91A684DB14B0C01100368A32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CouchDBTest/GGULIVRR-Prefix.pch";
+				INFOPLIST_FILE = "CouchDBTest/GGULIVRR-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/CouchDBTest\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		91A684B214B0C01000368A32 /* Build configuration list for PBXProject "GGULIVRR" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91A684D714B0C01100368A32 /* Debug */,
+				91A684D814B0C01100368A32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		91A684D914B0C01100368A32 /* Build configuration list for PBXNativeTarget "Ggulivrr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91A684DA14B0C01100368A32 /* Debug */,
+				91A684DB14B0C01100368A32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 91A684AF14B0C01000368A32 /* Project object */;
+}
