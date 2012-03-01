@@ -24,9 +24,9 @@
 @implementation ViewController
 
 #define kmasterURL @"http://jack:jack@3mobile.iriscouch.com/%@"
-#define kbackgroundHTML @"<html><body></body></html>"
+#define kbackgroundHTML @"<html><head><link rel='stylesheet' href='stylesheet.css'></head><body></body></html>"
 #define kwaitTitle @"Please wait..."
-#define kscanTitle @"Please scan a QR code"
+#define kscanTitle @"Click on the scan button to scan a QR code"
 
 @synthesize serverURL, localDatabase, masterDatabase;
 @synthesize webView, navBar, scanButton;
@@ -127,7 +127,7 @@
 		[localDatabase replicateWithURL:masterURL exclusively:TRUE];
 		
 		// Show the background page, set the title adn enable button
-		[self.webView loadHTMLString:kbackgroundHTML baseURL:nil];
+		[self.webView loadHTMLString:[self translateHTMLCodes:kbackgroundHTML] baseURL:nil];
 		navBar.topItem.title = kscanTitle;
 		[scanButton setEnabled:TRUE];
 	}
@@ -165,7 +165,7 @@
 #pragma mark - CouchBase methods
 
 // Get the body of an item, translate it 
-// and load in the webView
+// and load it in the webView
 - (void)loadItem:(NSString *)itemName {
 	
 	NSMutableArray *ids = [[NSMutableArray alloc] initWithObjects:itemName, nil];
@@ -194,7 +194,7 @@
 	
 	[self.webView loadHTMLString:[self translateHTMLCodes:body] baseURL:nil];
 	navBar.topItem.title = @"";
-	[scanButton setEnabled:FALSE];
+	//[scanButton setEnabled:FALSE];
 }
 
 // Just get the body of an item
@@ -276,7 +276,7 @@
 	[op start];
 	
 	// Show the background page
-	[self.webView loadHTMLString:kbackgroundHTML baseURL:nil];
+	[self.webView loadHTMLString:[self translateHTMLCodes:kbackgroundHTML] baseURL:nil];
 	navBar.topItem.title = kscanTitle;
 	[scanButton setEnabled:TRUE];
 }
