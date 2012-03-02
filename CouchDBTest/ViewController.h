@@ -24,6 +24,7 @@
 @property (nonatomic, strong) IBOutlet UIWebView *webView;
 @property (nonatomic, strong) IBOutlet UINavigationBar *navBar;
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *scanButton;
+@property (nonatomic, strong) IBOutlet UIBarButtonItem *backButton;
 @property (nonatomic, retain) NSURL *serverURL;
 @property (nonatomic, retain) CouchDatabase *localDatabase;
 @property (nonatomic, retain) CouchDatabase *masterDatabase;
@@ -42,6 +43,8 @@
 - (void)loadItem:(NSString *)itemName;
 - (NSString *)getItem:(NSString *)itemName;
 - (IBAction)listAllDocuments:(id)sender;
+- (IBAction)backPressed:(id)sender;
+- (IBAction)scanPressed:(id)sender;
 - (void)processFormResult:(NSArray *)options;
 - (NSString *)translateHTMLCodes:(NSString *)html;
 

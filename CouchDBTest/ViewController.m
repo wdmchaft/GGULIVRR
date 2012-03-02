@@ -29,7 +29,7 @@
 #define kscanTitle @"Click on the scan button to scan a QR code"
 
 @synthesize serverURL, localDatabase, masterDatabase;
-@synthesize webView, navBar, scanButton;
+@synthesize webView, navBar, scanButton, backButton;
 @synthesize userID, token;
 @synthesize currentItem, resultDoc;
 @synthesize zBarReader;
@@ -90,6 +90,7 @@
 	// Show wait screen and disable scan button
 	navBar.topItem.title = kwaitTitle;
 	[scanButton setEnabled:FALSE];
+	[backButton setEnabled:FALSE];
 	
 	if(userID == nil) {
         LoginViewController *loginView = [[LoginViewController alloc] init];
@@ -194,7 +195,7 @@
 	
 	[self.webView loadHTMLString:[self translateHTMLCodes:body] baseURL:nil];
 	navBar.topItem.title = @"";
-	//[scanButton setEnabled:FALSE];
+	[backButton setEnabled:FALSE];
 }
 
 // Just get the body of an item
@@ -243,16 +244,27 @@
 											navigationType:(UIWebViewNavigationType)navigationType {
     
     NSString *url = request.URL.absoluteString;
-    NSRange range = [url rangeOfString:@"?"];
+	
+	// This is a form submission
+	if ([url rangeOfString:@"applewebdata"].location != NSNotFound) {
+		NSRange range = [url rangeOfString:@"?"];
     
-    if (range.length > 0) {
+		if (range.length > 0) {
 
-        NSString *optionString = [url substringFromIndex:range.location + 1];
-        NSArray *options = [optionString componentsSeparatedByString:@"&"];
-        [self processFormResult:options];
+			NSString *optionString = [url substringFromIndex:range.location + 1];
+			NSArray *options = [optionString componentsSeparatedByString:@"&"];
+			[self processFormResult:options];
 		
-        return NO;
-    }
+			return NO;
+		}
+	}
+	else if ([url rangeOfString:@"about:blank"].location != NSNotFound) {
+		// Ignore this
+	}
+	// This is a plain url => show the back button
+	else {
+		[backButton setEnabled:TRUE];
+	}
 	
     return YES;
 }
@@ -301,6 +313,11 @@
 						withString:[NSString stringWithFormat:@"<style type='text/css'>%@</style>", stylesheet]];
 	
 	return [html stringByReplacingOccurrencesOfString:@"$db" withString:attachmentURL];
+}
+
+- (IBAction)backPressed:(id)sender {
+	
+	[self loadItem:currentItem];
 }
 
 #pragma mark - ZBar methods
