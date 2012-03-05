@@ -19,8 +19,10 @@ GGULIVRR is a Generic Game for Ubiquitous Learning in Interacting Virtual and Re
 GGULIVRR uses several open-source techniques. To minimise content development time, the app uses a generic system to eliminate the need for designing several user interfaces. Also, to enhance the responsiveness and robustness of the game system, a caching system is used to make sure that the absence of an internet connection does not hinder the game.
 
 The game system consists of two components :
-1. Web-service and master database that contains all information for the game (user accounts, multimedia files, tag information, scores, rules, ...). 
-2. Mobile client and local database. This client replicates the master database information, presents the game UI and multimedia files and interprets the game rules.
+
+* Web-service and master database that contains all information for the game (user accounts, multimedia files, tag information, scores, rules, ...).
+
+* Mobile client and local database. This client replicates the master database information, presents the game UI and multimedia files and interprets the game rules.
 
 For the first component and for the local client database, we have chosen Apache CouchDB (http://couchdb.apache.org/). This new database application is a noSQL, scheme-less, document-oriented database that exposes all operations through a RESTful web-service. The format of the records is JSON. The database also has strong support for replication and last but not least can be run on iOS as well as Android.
 
