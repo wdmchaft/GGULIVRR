@@ -41,6 +41,8 @@ The use of HTML has following advantages:
 Quickstart
 ==========
 
+Important! This code does not work in the simulator. You need to test it on a real device.
+
 1. Download the code, fill in your developer credentials and compile.
 2. Start the app and fill in a username. Any user name will do, as it is postfixed with a unique value.
 3. Fill in 'berlin' as the database. This syncs with a database on http:// 3mobile.iriscouch.com/berlin. You can examine the structure and contents of the database by going to http://3mobile.iriscouch.com/_utils/ with username 'jack' and password 'jack'. The database contains the questions (item1, item2, item3), a stylesheet and some user data.
