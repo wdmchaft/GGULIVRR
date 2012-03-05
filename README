@@ -66,7 +66,9 @@ Example of a question :
 	<a href='http://www.lonelyplanet.com/maps/europe/germany/berlin/'>Click here for the map of Berlin</a>
 </body></html>
 
+The names of the input fields are used to gather the answers of the users in key / value pairs into a JSON document that bears the name of the user. This name is postfixed with the current time in milliseconds. Each answer that is submitted, creates a new revision of this document and is completed with the geographical position of the user at the timme of submission.
 Attachments must be added to the document and be referred to as '$db/attachment'. All valid HTML file types are supported. Links to websites can be embedded and will allow to link to external ( not cached in the local database ) sites. Whenever a link is clicked, the 'back' button is also enabled so we can go back to the questions.
 Stylesheet support is provided with the tag <link rel='stylesheet' href='stylesheet.css'> . Of course, the database must contain a document, called 'stylesheet' ( exactly the same in lowercase ) and the stylesheet entries must reside in the 'body' field.
 The background which is shown between the questions is implemented by am HTML file called 'background'. Here you can add text, pictures or a watermark just as you would in a webpage.
+
 
