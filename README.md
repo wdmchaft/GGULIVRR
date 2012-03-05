@@ -59,7 +59,8 @@ Example of a question :
 <body>
 	<h1>Question 1</h1><br /><img src='$db/reichstag.jpg' />
 	<br /><br /><form action='self'>What building is shown here?<br /><br />
-	<input type='text' name='reichstag' class='ui-input-text' />&nbsp; &nbsp; <input type='submit' value='Answer' class='ui-btn'></form>
+	<input type='text' name='reichstag' class='ui-input-text' /> 
+	<input type='submit' value='Answer' class='ui-btn'></form>
 </body></html>
 ```
 
