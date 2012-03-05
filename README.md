@@ -27,19 +27,28 @@ The game system consists of two components :
 For the first component and for the local client database, we have chosen Apache CouchDB (http://couchdb.apache.org/). This new database application is a noSQL, scheme-less, document-oriented database that exposes all operations through a RESTful web-service. The format of the records is JSON. The database also has strong support for replication and last but not least can be run on iOS as well as Android.
 
 By using CouchDB, we get following important advantages :
-1. Through the replication features, we can transparently sync the latest game information from the cloud with the CouchDB instance on the mobile device. Once the information is synced, the game can be played without an internet connection since everything now resides in the database instance on the mobile device. Network latencies are eliminated since all information comes from the local database.
-2. All values posted by the user can be aggregated into a JSON document and replicated to the master database once an internet connection is available. 
-3. There is no need to write a separate web-service layer, since CouchDB has a built-in web service API.
+
+* Through the replication features, we can transparently sync the latest game information from the cloud with the CouchDB instance on the mobile device. Once the information is synced, the game can be played without an internet connection since everything now resides in the database instance on the mobile device. Network latencies are eliminated since all information comes from the local database.
+
+* All values posted by the user can be aggregated into a JSON document and replicated to the master database once an internet connection is available. 
+
+* There is no need to write a separate web-service layer, since CouchDB has a built-in web service API.
 
 For the second component, we have developed a framework in iOS and Android that uses HTML as mark-up language for the user interface. In iOS there is a UI component called UIWebView, while Android has WebView. Both components act like a full-fledged browser with support for all mime types and even a built-in Javascript engine. This way, plain HTML can transparently function as the UI. In the database, the HTML snippets are stored inside JSON documents together with their attachments. These attachments can be anything a browser understands (pictures, sounds, movie clips, animated gifs, etc...).
 
 The use of HTML has following advantages:
-1. Interface design only has to be done once for all platforms.
-2. The game designer does not have to know anything about special UI features on iOS or Android.
-3. The game designer does not have to have special technical skills, UI development can be done in a simple HTML editor.
-4. Other platforms can be supported in the future.
-5. Through the use of HTML forms, the application posts everything to the REST API of the local CouchDB instance. This way, generic JSON documents can be generated with all the values that the user has filled in.
-6. Style sheets can change the look and feel and even the behaviour of the UI quickly and efficiently.
+
+* Interface design only has to be done once for all platforms.
+
+* The game designer does not have to know anything about special UI features on iOS or Android.
+
+* The game designer does not have to have special technical skills, UI development can be done in a simple HTML editor.
+
+* Other platforms can be supported in the future.
+
+* Through the use of HTML forms, the application posts everything to the REST API of the local CouchDB instance. This way, generic JSON documents can be generated with all the values that the user has filled in.
+
+* Style sheets can change the look and feel and even the behaviour of the UI quickly and efficiently.
 
 The mobile client makes use of QR codes to steer actions. The name of the JSON document to process at that location is stored in the QR code. When the client reads the code, the HTML and attachments are retrieved from the JSON document and shown in the UI of the mobile device. We are using the open-source ZBar library, available on iOS and Android for reading the QR codes.
 
