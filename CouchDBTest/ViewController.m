@@ -24,7 +24,7 @@
 @implementation ViewController
 
 #define kmasterURL @"http://jack:jack@3mobile.iriscouch.com/%@"
-#define kbackgroundHTML @"<html><head><link rel='stylesheet' href='stylesheet.css'></head><body></body></html>"
+#define kHostName @"www.iriscouch.com"
 #define kwaitTitle @"Please wait..."
 #define kscanTitle @"Click on the scan button to scan a QR code"
 
@@ -36,7 +36,7 @@
 @synthesize locationManager;
 @synthesize replicated;
 @synthesize currentLatitude, currentLongitude;
-@synthesize stylesheet;
+@synthesize internetConnectionStatus;
 
 - (void)dealloc {
 
@@ -71,6 +71,14 @@
     // Set a movement threshold for new events.
     locationManager.distanceFilter = 500;
     [locationManager startUpdatingLocation];
+	
+	//Use the Reachability class to determine if the internet can be reached.
+    [[Reachability sharedReachability] setHostName:kHostName];
+    //Set Reachability class to notifiy app when the network status changes.
+    [[Reachability sharedReachability] setNetworkStatusNotificationsEnabled:YES];
+    //Set a method to be called when a notification is sent.
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChanged:) name:@"kNetworkReachabilityChangedNotification" object:nil];
+	[self updateStatus];
 }
 
 - (void)viewDidUnload {
@@ -127,8 +135,8 @@
 		// Start replication to load questions from master DB and upload answers
 		[localDatabase replicateWithURL:masterURL exclusively:TRUE];
 		
-		// Show the background page, set the title adn enable button
-		[self.webView loadHTMLString:[self translateHTMLCodes:kbackgroundHTML] baseURL:nil];
+		// Show the background page, set the title and enable button
+		[self getItem:@"background" andLoadIntoWebView:TRUE];
 		navBar.topItem.title = kscanTitle;
 		[scanButton setEnabled:TRUE];
 	}
@@ -158,16 +166,15 @@
 - (void)showMessage:(NSString *)msg {
 	
     UIAlertView *messageBox = [[UIAlertView alloc] initWithTitle: token message: msg delegate: self 
-											   cancelButtonTitle: @"Ok" otherButtonTitles: nil];
+											       cancelButtonTitle: @"Ok" otherButtonTitles: nil];
     [messageBox show];
     [messageBox release];
 }
 
 #pragma mark - CouchBase methods
 
-// Get the body of an item, translate it 
-// and load it in the webView
-- (void)loadItem:(NSString *)itemName {
+// Get the body of an item and maybe load it in the webView 
+- (NSString *)getItem:(NSString *)itemName andLoadIntoWebView:(BOOL) load {
 	
 	NSMutableArray *ids = [[NSMutableArray alloc] initWithObjects:itemName, nil];
 	CouchQuery *allDocs = [localDatabase getDocumentsWithIDs:ids];
@@ -176,55 +183,34 @@
 	CouchDocument *doc = row.document;
 	NSString *body = [doc.userProperties objectForKey:@"body"];
 	
+	// Replication is ok
 	if (body) {
-		// Replication is ok for this doc
 		replicated = true;
-		[ids release];
-		ids = nil;
 	}
+	// Replication is not ok
 	else {
-		// Replication not finished yet
 		replicated = false;
-		allDocs = [masterDatabase getDocumentsWithIDs:ids];
-		row = [allDocs.rows rowAtIndex:0];
-		doc = row.document;
-		body = [doc.userProperties objectForKey:@"body"];
-		[ids release];
-		ids = nil;
+		// No network
+		if (self.internetConnectionStatus == NotReachable) {
+			[self showMessage:@"No network available. Please try again later."];
+		}
+		else {
+			allDocs = [masterDatabase getDocumentsWithIDs:ids];
+			row = [allDocs.rows rowAtIndex:0];
+			doc = row.document;
+			body = [doc.userProperties objectForKey:@"body"];
+		}
 	}
 	
-	[self.webView loadHTMLString:[self translateHTMLCodes:body] baseURL:nil];
-	navBar.topItem.title = @"";
-	[backButton setEnabled:FALSE];
-}
+	[ids release];
+	ids = nil;
 
-// Just get the body of an item
-- (NSString *)getItem:(NSString *)itemName {
-	
-	NSMutableArray *ids = [[NSMutableArray alloc] initWithObjects:itemName, nil];
-	CouchQuery *allDocs = [localDatabase getDocumentsWithIDs:ids];
-	
-	CouchQueryRow *row = [allDocs.rows rowAtIndex:0];
-	CouchDocument *doc = row.document;
-	NSString *body = [doc.userProperties objectForKey:@"body"];
-	
-	if (body) {
-		// Replication is ok for this doc
-		replicated = true;
-		[ids release];
-		ids = nil;
+	if (load) {
+		[self.webView loadHTMLString:[self translateHTMLCodes:body] baseURL:nil];
+		navBar.topItem.title = @"";
+		[backButton setEnabled:FALSE];
 	}
-	else {
-		// Replication not finished yet
-		replicated = false;
-		allDocs = [masterDatabase getDocumentsWithIDs:ids];
-		row = [allDocs.rows rowAtIndex:0];
-		doc = row.document;
-		body = [doc.userProperties objectForKey:@"body"];
-		[ids release];
-		ids = nil;
-	}
-	
+
 	return body;
 }
 
@@ -258,9 +244,8 @@
 			return NO;
 		}
 	}
-	else if ([url rangeOfString:@"about:blank"].location != NSNotFound) {
-		// Ignore this
-	}
+	// Ignore this
+	else if ([url rangeOfString:@"about:blank"].location != NSNotFound) {}
 	// This is a plain url => show the back button
 	else {
 		[backButton setEnabled:TRUE];
@@ -288,7 +273,7 @@
 	[op start];
 	
 	// Show the background page
-	[self.webView loadHTMLString:[self translateHTMLCodes:kbackgroundHTML] baseURL:nil];
+	[self getItem:@"background" andLoadIntoWebView:TRUE];
 	navBar.topItem.title = kscanTitle;
 	[scanButton setEnabled:TRUE];
 }
@@ -297,11 +282,8 @@
 	
 	NSString *attachmentURL;
 	
-	// Load stylesheet
-	if (!stylesheet)
-		stylesheet = [self getItem:@"stylesheet"];
-	
-	if(replicated) {
+	// Fallback for replication
+	if (replicated) {
 		attachmentURL = [NSString stringWithFormat:@"%@/%@", [localDatabase.URL absoluteString], currentItem];
 	}
 	else {
@@ -310,14 +292,15 @@
 	
 	// Fill html with stylesheet entries
 	html = [html stringByReplacingOccurrencesOfString:@"<link rel='stylesheet' href='stylesheet.css'>" 
-						withString:[NSString stringWithFormat:@"<style type='text/css'>%@</style>", stylesheet]];
+						withString:[NSString stringWithFormat:@"<style type='text/css'>%@</style>", 
+									[self getItem:@"stylesheet" andLoadIntoWebView:NO]]];
 	
 	return [html stringByReplacingOccurrencesOfString:@"$db" withString:attachmentURL];
 }
 
 - (IBAction)backPressed:(id)sender {
 	
-	[self loadItem:currentItem];
+	[self getItem:currentItem andLoadIntoWebView:TRUE];
 }
 
 #pragma mark - ZBar methods
@@ -341,7 +324,7 @@
         currentItem = symbol.data;
 	}
 	
-	[self loadItem:currentItem];
+	[self getItem:currentItem andLoadIntoWebView:TRUE];
 }
 
 #pragma mark - CLLocationManager delegate method
@@ -350,6 +333,19 @@
 														fromLocation:(CLLocation *)oldLocation {
 	currentLatitude = newLocation.coordinate.latitude;
 	currentLongitude = newLocation.coordinate.longitude;
+}
+
+#pragma mark - Reachability methods
+
+- (void)reachabilityChanged:(NSNotification *)note {
+	
+    [self updateStatus];
+}
+
+- (void)updateStatus {
+	
+    // Query the SystemConfiguration framework for the state of the device's network connections.
+    self.internetConnectionStatus = [[Reachability sharedReachability] internetConnectionStatus];
 }
 
 @end

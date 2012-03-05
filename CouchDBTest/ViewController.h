@@ -18,6 +18,7 @@
 #import <CouchCocoa/CouchDatabase.h>
 #import "ZBarSDK.h"
 #import <CoreLocation/CoreLocation.h>
+#import "Reachability.h"
 
 @interface ViewController : UIViewController <UIWebViewDelegate, ZBarReaderDelegate, CLLocationManagerDelegate>
 
@@ -34,18 +35,19 @@
 @property (nonatomic, retain) CouchDocument *resultDoc;
 @property (nonatomic, retain) ZBarReaderViewController *zBarReader;
 @property (nonatomic, retain) CLLocationManager *locationManager;
-@property(nonatomic, retain) NSString *stylesheet;
 @property bool replicated;
 @property float currentLatitude;
 @property float currentLongitude;
+@property NetworkStatus internetConnectionStatus;
 
 - (void)showMessage:(NSString *)msg;
-- (void)loadItem:(NSString *)itemName;
-- (NSString *)getItem:(NSString *)itemName;
+- (NSString *)getItem:(NSString *)itemName andLoadIntoWebView:(BOOL) load;
 - (IBAction)listAllDocuments:(id)sender;
 - (IBAction)backPressed:(id)sender;
 - (IBAction)scanPressed:(id)sender;
 - (void)processFormResult:(NSArray *)options;
 - (NSString *)translateHTMLCodes:(NSString *)html;
+- (void)reachabilityChanged:(NSNotification *)note;
+- (void)updateStatus;
 
 @end

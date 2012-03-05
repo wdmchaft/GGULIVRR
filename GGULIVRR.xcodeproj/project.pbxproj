@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		911C3D7C150247A7004FD9C4 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 911C3D7B150247A7004FD9C4 /* Reachability.m */; };
+		911C3D7E15024A12004FD9C4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 911C3D7D15024A12004FD9C4 /* SystemConfiguration.framework */; };
 		918E62F414C8795E00C76E94 /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 918E62F314C8795E00C76E94 /* libzbar.a */; };
 		918E631114C87A0900C76E94 /* zbar-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 918E630D14C87A0900C76E94 /* zbar-back.png */; };
 		918E631214C87A0900C76E94 /* zbar-help.html in Resources */ = {isa = PBXBuildFile; fileRef = 918E630E14C87A0900C76E94 /* zbar-help.html */; };
@@ -38,6 +40,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		911C3D7A150247A7004FD9C4 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		911C3D7B150247A7004FD9C4 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		911C3D7D15024A12004FD9C4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		918E62F314C8795E00C76E94 /* libzbar.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libzbar.a; sourceTree = "<group>"; };
 		918E62F814C879B600C76E94 /* Decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Decoder.h; sourceTree = "<group>"; };
 		918E62F914C879B600C76E94 /* Exception.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exception.h; sourceTree = "<group>"; };
@@ -98,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				911C3D7E15024A12004FD9C4 /* SystemConfiguration.framework in Frameworks */,
 				91D7B8B014F6988E00DA8EA6 /* CoreLocation.framework in Frameworks */,
 				918E631E14C87C8F00C76E94 /* libiconv.dylib in Frameworks */,
 				918E631C14C87C7E00C76E94 /* QuartzCore.framework in Frameworks */,
@@ -119,6 +125,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		911C3D7915024726004FD9C4 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				911C3D7A150247A7004FD9C4 /* Reachability.h */,
+				911C3D7B150247A7004FD9C4 /* Reachability.m */,
+			);
+			name = Reachability;
+			sourceTree = "<group>";
+		};
 		918E62F114C8794B00C76E94 /* ZBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +220,7 @@
 				91A684E014B0C05F00368A32 /* libstdc++.dylib */,
 				91A684DE14B0C04600368A32 /* libz.dylib */,
 				918E631D14C87C8F00C76E94 /* libiconv.dylib */,
+				911C3D7D15024A12004FD9C4 /* SystemConfiguration.framework */,
 				918E631714C87C6B00C76E94 /* CoreMedia.framework */,
 				91A684C014B0C01100368A32 /* CoreGraphics.framework */,
 				91D7B8AF14F6988E00DA8EA6 /* CoreLocation.framework */,
@@ -223,6 +239,7 @@
 		91A684C214B0C01100368A32 /* GGULIVRR */ = {
 			isa = PBXGroup;
 			children = (
+				911C3D7915024726004FD9C4 /* Reachability */,
 				918E62F114C8794B00C76E94 /* ZBar */,
 				91A6854814B49FF600368A32 /* Core */,
 				91A684F914B4523700368A32 /* NIB */,
@@ -357,6 +374,7 @@
 				91A684CD14B0C01100368A32 /* AppDelegate.m in Sources */,
 				91A684D014B0C01100368A32 /* ViewController.m in Sources */,
 				91A6854614B49FF200368A32 /* LoginViewController.m in Sources */,
+				911C3D7C150247A7004FD9C4 /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
