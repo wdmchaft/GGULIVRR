@@ -15,18 +15,22 @@ limitations under the License.
 # Abstract
 
 GGULIVRR is a Generic Game for Ubiquitous Learning in Interacting Virtual and Real Realities. It aims to provide an open-source framework so that learning games can easily be constructed for iOS and Android platforms without requiring special (except HTML) technical skills.
+
 GGULIVRR uses several open-source techniques. To minimise content development time, the app uses a generic system to eliminate the need for designing several user interfaces. Also, to enhance the responsiveness and robustness of the game system, a caching system is used to make sure that the absence of an internet connection does not hinder the game.
+
 The game system consists of two components :
 - Web-service and master database that contains all information for the game (user accounts, multimedia files, tag information, scores, rules, ...). 
 - Mobile client and local database. This client replicates the master database information, presents the game UI and multimedia files and interprets the game rules.
 
 For the first component and for the local client database, we have chosen Apache CouchDB (http://couchdb.apache.org/). This new database application is a noSQL, scheme-less, document-oriented database that exposes all operations through a RESTful web-service. The format of the records is JSON. The database also has strong support for replication and last but not least can be run on iOS as well as Android.
+
 By using CouchDB, we get following important advantages :
 - Through the replication features, we can transparently sync the latest game information from the cloud with the CouchDB instance on the mobile device. Once the information is synced, the game can be played without an internet connection since everything now resides in the database instance on the mobile device. Network latencies are eliminated since all information comes from the local database.
 - All values posted by the user can be aggregated into a JSON document and replicated to the master database once an internet connection is available. 
 - There is no need to write a separate web-service layer, since CouchDB has a built-in web service API.
 
 For the second component, we have developed a framework in iOS and Android that uses HTML as mark-up language for the user interface. In iOS there is a UI component called UIWebView, while Android has WebView. Both components act like a full-fledged browser with support for all mime types and even a built-in Javascript engine. This way, plain HTML can transparently function as the UI. In the database, the HTML snippets are stored inside JSON documents together with their attachments. These attachments can be anything a browser understands (pictures, sounds, movie clips, animated gifs, etc...).
+
 The use of HTML has following advantages:
 - Interface design only has to be done once for all platforms.
 - The game designer does not have to know anything about special UI features on iOS or Android.
@@ -50,6 +54,7 @@ Important! This code does not work in the simulator. You need to test it on a re
 ## Structure of the database
 
 The questions in the database must all be named 'item', followed by a number ( no space ). They must contain a field, called 'body' in which you store the HTML.
+
 Example of a question : 
 
 ```<html>
@@ -65,8 +70,11 @@ Example of a question :
 ```
 
 The names of the input fields are used to gather the answers of the users in key / value pairs into a JSON document that bears the name of the user. This name is postfixed with the current time in milliseconds. Each answer that is submitted, creates a new revision of this document and is completed with the geographical position of the user at the timme of submission.
+
 Attachments must be added to the document and be referred to as '$db/attachment'. All valid HTML file types are supported. Links to websites can be embedded and will allow to link to external ( not cached in the local database ) sites. Whenever a link is clicked, the 'back' button is also enabled so we can go back to the questions.
+
 Stylesheet support is provided with the tag <link rel='stylesheet' href='stylesheet.css'> . Of course, the database must contain a document, called 'stylesheet' ( exactly the same in lowercase ) and the stylesheet entries must reside in the 'body' field.
+
 The background which is shown between the questions is implemented by am HTML file called 'background'. Here you can add text, pictures or a watermark just as you would in a webpage.
 
 
