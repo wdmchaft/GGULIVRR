@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		911C3D7C150247A7004FD9C4 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 911C3D7B150247A7004FD9C4 /* Reachability.m */; };
 		911C3D7E15024A12004FD9C4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 911C3D7D15024A12004FD9C4 /* SystemConfiguration.framework */; };
-		918E62F414C8795E00C76E94 /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 918E62F314C8795E00C76E94 /* libzbar.a */; };
 		918E631114C87A0900C76E94 /* zbar-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 918E630D14C87A0900C76E94 /* zbar-back.png */; };
 		918E631214C87A0900C76E94 /* zbar-help.html in Resources */ = {isa = PBXBuildFile; fileRef = 918E630E14C87A0900C76E94 /* zbar-help.html */; };
 		918E631314C87A0900C76E94 /* zbar-helpicons.png in Resources */ = {isa = PBXBuildFile; fileRef = 918E630F14C87A0900C76E94 /* zbar-helpicons.png */; };
@@ -36,6 +35,7 @@
 		91A684E514B0C09300368A32 /* CouchCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A684E314B0C09300368A32 /* CouchCocoa.framework */; };
 		91A6854614B49FF200368A32 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A6854514B49FF200368A32 /* LoginViewController.m */; };
 		91A6855114B7081800368A32 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91A6855014B7081800368A32 /* LoginViewController.xib */; };
+		91B2324A1505FB4200F8F2AE /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91B232481505FA0500F8F2AE /* libzbar.a */; };
 		91D7B8B014F6988E00DA8EA6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91D7B8AF14F6988E00DA8EA6 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,7 +43,7 @@
 		911C3D7A150247A7004FD9C4 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		911C3D7B150247A7004FD9C4 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		911C3D7D15024A12004FD9C4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		918E62F314C8795E00C76E94 /* libzbar.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libzbar.a; sourceTree = "<group>"; };
+		918E62F314C8795E00C76E94 /* libzbar.a.backup */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libzbar.a.backup; sourceTree = "<group>"; };
 		918E62F814C879B600C76E94 /* Decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Decoder.h; sourceTree = "<group>"; };
 		918E62F914C879B600C76E94 /* Exception.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exception.h; sourceTree = "<group>"; };
 		918E62FA14C879B600C76E94 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
@@ -95,6 +95,7 @@
 		91A6854414B49FF100368A32 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		91A6854514B49FF200368A32 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		91A6855014B7081800368A32 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		91B232481505FA0500F8F2AE /* libzbar.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libzbar.a; sourceTree = "<group>"; };
 		91D7B8AF14F6988E00DA8EA6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -103,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91B2324A1505FB4200F8F2AE /* libzbar.a in Frameworks */,
 				911C3D7E15024A12004FD9C4 /* SystemConfiguration.framework in Frameworks */,
 				91D7B8B014F6988E00DA8EA6 /* CoreLocation.framework in Frameworks */,
 				918E631E14C87C8F00C76E94 /* libiconv.dylib in Frameworks */,
@@ -118,7 +120,6 @@
 				91A684C114B0C01100368A32 /* CoreGraphics.framework in Frameworks */,
 				91A684E414B0C09300368A32 /* Couchbase.framework in Frameworks */,
 				91A684E514B0C09300368A32 /* CouchCocoa.framework in Frameworks */,
-				918E62F414C8795E00C76E94 /* libzbar.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +139,8 @@
 			isa = PBXGroup;
 			children = (
 				918E62F514C8797100C76E94 /* Headers */,
-				918E62F314C8795E00C76E94 /* libzbar.a */,
+				918E62F314C8795E00C76E94 /* libzbar.a.backup */,
+				91B232481505FA0500F8F2AE /* libzbar.a */,
 			);
 			name = ZBar;
 			sourceTree = "<group>";
@@ -311,7 +313,7 @@
 		91A684AF14B0C01000368A32 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 			};
 			buildConfigurationList = 91A684B214B0C01000368A32 /* Build configuration list for PBXProject "GGULIVRR" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -428,7 +430,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "3C402174-1629-4043-BB63-68E982347658";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0936179B-535E-4546-8129-6C33C9241D43";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -448,7 +450,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "3C402174-1629-4043-BB63-68E982347658";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0936179B-535E-4546-8129-6C33C9241D43";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

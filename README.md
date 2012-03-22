@@ -80,7 +80,7 @@ Example of a question :
 </body></html>
 ```
 
-The names of the input fields are used to gather the answers of the users in key / value pairs into a JSON document that bears the name of the user. This name is postfixed with the current time in milliseconds. Each answer that is submitted, creates a new revision of this document and is completed with the geographical position of the user at the timme of submission.
+The names of the input fields are used to gather the answers of the users in key / value pairs into a JSON document that bears the name of the user. This name is postfixed with the current time in milliseconds. Each answer that is submitted, creates a new revision of this document and is completed with the geographical position of the user at the time of submission.
 
 Attachments must be added to the document and be referred to as '$db/attachment'. All valid HTML file types are supported. Links to websites can be embedded and will allow to link to external ( not cached in the local database ) sites. Whenever a link is clicked, the 'back' button is also enabled so we can go back to the questions.
 
